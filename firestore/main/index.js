@@ -23,7 +23,6 @@ async function initializeApp() {
 async function initializeAppFunctions() {
   process.env.GCLOUD_PROJECT = 'firestorebeta1test2';
   // [START initialize_app_functions]
-  const admin = require('firebase-admin');  
   admin.initializeApp();
 
   const db = admin.firestore();
@@ -217,7 +216,6 @@ async function updateDocument(db) {
 
 async function updateDocumentArray(db) {
   // [START update_document_array]
-  const admin = require('firebase-admin');
   // ...
   const washingtonRef = db.collection('cities').doc('DC');
 
@@ -236,7 +234,6 @@ async function updateDocumentArray(db) {
 
 async function updateDocumentIncrement(db) {
   // [START update_document_increment]
-  const admin = require('firebase-admin');
   // ...
   const washingtonRef = db.collection('cities').doc('DC');
 
@@ -276,8 +273,6 @@ async function updateCreateIfMissing(db) {
 }
 
 async function updateServerTimestamp(db) {
-  const admin = require('firebase-admin');
-
   // Create the object before updating it
   await db.collection('objects').doc('some-id').set({});
 
@@ -298,7 +293,6 @@ async function updateServerTimestamp(db) {
 }
 
 async function updateDeleteField(db) {
-  const admin = require('firebase-admin');
   // [START update_delete_field]
   // Get the `FieldValue` object
   const FieldValue = admin.firestore.FieldValue;
